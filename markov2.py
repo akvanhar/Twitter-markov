@@ -97,16 +97,16 @@ class SimpleMarkovGenerator(object):
 
 
 ###################################################
-def create_markov():
-    my_markov = SimpleMarkovGenerator(300)
-    my_markov_list = my_markov.combine_files(argv)
+def create_markov(length, arg_list):
+    my_markov = SimpleMarkovGenerator(length)
+    my_markov_list = my_markov.combine_files(arg_list)
     my_markov_diction = my_markov.make_chains(my_markov_list)
     my_markov_text = my_markov.make_text(my_markov_diction)
     return my_markov.end_at_punct(my_markov_text)
 
-markov = create_markov()
+# markov = create_markov()
 
-while len(markov) <= 5:
-    markov = create_markov()
+# while len(markov) <= 5:
+#     markov = create_markov()
 
-print markov
+# print markov
